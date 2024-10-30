@@ -1,8 +1,15 @@
+import Provider from "@/app/provider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+export const runtime = "edge";
+
+const LiAlinurImratANSI = localFont({
+  src: "./fonts/LiAlinurImaratANSI.ttf",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${LiAlinurImratANSI.variable} bg-black `}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
