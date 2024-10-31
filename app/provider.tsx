@@ -1,4 +1,5 @@
 "use client";
+import StoreProvider from "@/lib/store/Provider";
 import { NextUIProvider } from "@nextui-org/react";
 import React, { ReactNode } from "react";
 
@@ -7,7 +8,11 @@ interface ProviderProps {
 }
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
-  return <NextUIProvider>{children}</NextUIProvider>;
+  return (
+    <StoreProvider>
+      <NextUIProvider>{children}</NextUIProvider>
+    </StoreProvider>
+  );
 };
 
 export default Provider;
