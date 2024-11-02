@@ -10,24 +10,6 @@ export interface StoreProviderProps {
 }
 
 const StoreProvider = ({ children }: StoreProviderProps) => {
-  // const initStore = (): Partial<Store> => {
-  //   try {
-  //     if (webSocketUrl) {
-  //       const websocket = new WebSocket(webSocketUrl);
-
-  //       return {
-  //         websocket: websocket,
-  //       };
-  //     } else {
-  //       return {
-  //         websocket: "",
-  //       };
-  //     }
-  //   } catch (error) {
-  //     console.error("Invalid WebSocket URL:", webSocketUrl);
-  //     return {};
-  //   }
-  // };
 
   const storeRef = useRef<StoreApi<Store>>(store());
   return (
