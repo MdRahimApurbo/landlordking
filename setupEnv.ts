@@ -1,4 +1,5 @@
-const webSocketUrl = process.env.NEXT_PUBLIC_WS_URL;
+const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL;
 
 // Export the variables
-export { webSocketUrl };
+export { socketUrl };
+
