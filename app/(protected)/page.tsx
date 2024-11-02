@@ -8,7 +8,7 @@ export default function Home() {
         <div className="bg-[#3e1a58] p-8 flex flex-col gap-4 justify-center items-center">
           <h2>Land Lord King Game</h2>
           <h2 className="text-xl">All Room</h2>
-          <Link href={"/room/dshd"} className="bg-blue-500 text-white p-4">Go to Room</Link>
+          <Link href={"/room/xdftgv"} className="bg-blue-500 text-white p-4">Go to Room</Link>
           <HomeComponent />
         </div>
       </div>
