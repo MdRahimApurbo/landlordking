@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${LiAlinurImratANSI.variable} bg-black `}>
+      <body className={`${LiAlinurImratANSI.variable} bg-[#170f1d] h-screen`}>
         <Provider>{children}</Provider>
       </body>
     </html>

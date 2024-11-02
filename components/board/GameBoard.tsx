@@ -2,7 +2,7 @@
 import { Button } from "@nextui-org/react";
 import { MoveRight } from "lucide-react";
 
-const Board = () => {
+const GameBoard = () => {
   return (
     <div className="col-span-3 flex justify-center items-center">
       <div className="grid grid-cols-7 grid-rows-7 gap-1 max-h-[840px] fit-content max-w-[800px] ">
@@ -114,4 +114,4 @@ const Board = () => {
   );
 };
 
-export default Board;
+export default GameBoard;
