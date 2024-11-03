@@ -1,6 +1,7 @@
 "use client";
 import { socket } from "@/app/socket";
 import SendMessageForm from "@/components/form/SendMessageForm";
+import { ScrollShadow } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 interface ChatMessage {
@@ -33,16 +34,17 @@ const ChatBoard = () => {
         This is ChatBoard for Room: {roomId}
       </h2>
       <div className="flex flex-col h-full justify-between">
-        <ul className="space-y-2">
+        <ScrollShadow
+          className="w-full h-[400px] flex flex-col gap-5 justify-start items-start"
+          as={"ul"}
+          hideScrollBar
+        >
           {messagesList.map((msg, index) => (
-            <li key={index} className="p-2 bg-pink-400 rounded">
-              <div className="text-sm text-gray-600">
-                {new Date(msg.timestamp).toLocaleTimeString()}
-              </div>
+            <li key={index} className="p-2 bg-pink-700 rounded-full px-5 ">
               <div>{msg.message}</div>
             </li>
           ))}
-        </ul>
+        </ScrollShadow>
         <SendMessageForm roomId={roomId} />
       </div>
     </div>

@@ -1,23 +1,20 @@
-"use client";
-import { Button, Link } from "@nextui-org/react";
-import DiceComponent from "./DiceComponent";
+import Image from "next/image";
+import StartingComponents from "./StartingComponents";
 
 const HomeComponent = () => {
-    return (
-        <div className="bg-[#6647e0] p-8 flex flex-col gap-4 justify-center items-center rounded-lg sahdow-sm border-none">
-            <DiceComponent />
-            <h2 className="text-white text-3xl font-bold">Land Lord King Game</h2>
-            <h2 className="text-xl text-white">All Rooms</h2>
-            <Button href={"/room/xdftgv"}
-                as={Link}
-                color="primary"
-                showAnchorIcon
-                variant="solid"
-                className="bg-blue-500 text-white p-4 rounded-md" >
-                Go to Room
-            </Button>
-        </div>
-    );
+  return (
+    <div>
+      <div className="flex flex-col justify-center items-center space-y-4">
+        <Image src={"/images/ludu.png"} alt="ludu" width={150} height={150} />
+        <h2 className="text-white text-3xl font-bold">
+          Land Lord <span className="text-primary-200">King</span>{" "}
+          <span className="text-primary"> Game</span>
+        </h2>
+        <p className="text-purple-400">Fantasi Game Play</p>
+      </div>
+      <StartingComponents />
+    </div>
+  );
 };
 
 export default HomeComponent;

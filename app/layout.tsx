@@ -1,15 +1,8 @@
 import Provider from "@/app/provider";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
 export const runtime = "edge";
-
-const LiAlinurImratANSI = localFont({
-  src: "./fonts/LiAlinurImaratANSI.ttf",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${LiAlinurImratANSI.variable} bg-[#170f1d] h-screen`}>
+      <body className={`font-sans bg-[#170f1d] h-screen`}>
         <Provider>{children}</Provider>
       </body>
     </html>
