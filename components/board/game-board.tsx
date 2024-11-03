@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@nextui-org/react";
 import { MoveRight } from "lucide-react";
+import MiddleGameBoard from "./middle-game-board";
 
 const GameBoard = () => {
   return (
@@ -64,14 +64,7 @@ const GameBoard = () => {
         </div>
         {/* Center Box */}
         <div className="col-span-5 row-span-5 flex items-center justify-center bg-gray-800 border-2 border-black place-items-center rounded-lg shadow-lg">
-          <div className="p-8 text-center text-white">
-            <div>ধনি হবার মজার খেলা</div>
-            <div>
-              <Button variant="flat" className="bg-white text-primary">
-                খেলা শুরু কহ্রী
-              </Button>
-            </div>
-          </div>
+          <MiddleGameBoard />
         </div>
         {/* Right Row */}
         <div className="flex items-center justify-center col-start-7 row-start-2 row-span-5">

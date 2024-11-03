@@ -1,0 +1,182 @@
+.dice-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dice-container {
+  --diceEdgeClr: #f3f3f3;
+  --faceClr: #fff;
+  --faceBeatClr: linear-gradient(
+    to bottom right,
+    rgb(93, 93, 95),
+    rgb(30, 32, 34)
+  );
+  display: flex;
+  height: 15rem;
+  width: 15rem;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+}
+
+.dice-container::after {
+  content: "";
+  width: 7em;
+  height: 7em;
+  background: rgb(30 32 34 / 0.25);
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  transform: rotateX(85deg) translateZ(-50px);
+  filter: blur(40px);
+}
+
+.dice {
+  --wh: 80px;
+  width: var(--wh);
+  height: var(--wh);
+  position: relative;
+  transition: transform 0.2s ease-out;
+  background: var(--diceEdgeClr);
+  transform-style: preserve-3d;
+}
+
+.dice.rolling {
+  animation: rolling 0.6s linear infinite;
+}
+
+@keyframes rolling {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+  }
+}
+
+.dice .face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  background: var(--faceClr);
+  border: 2px solid var(--diceEdgeClr);
+  transform-style: preserve-3d;
+  display: grid;
+  place-items: center;
+  backface-visibility: hidden;
+}
+
+.dice .face span {
+  --wh: 0.8rem;
+  width: var(--wh);
+  height: var(--wh);
+  background: var(--faceBeatClr);
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dice .face span:nth-of-type(1) {
+  grid-area: a;
+}
+.dice .face span:nth-of-type(2) {
+  grid-area: b;
+}
+.dice .face span:nth-of-type(3) {
+  grid-area: c;
+}
+.dice .face span:nth-of-type(4) {
+  grid-area: d;
+}
+.dice .face span:nth-of-type(5) {
+  grid-area: e;
+}
+.dice .face span:nth-of-type(6) {
+  grid-area: f;
+}
+
+.dice .face::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--diceEdgeClr);
+  border-radius: inherit;
+  transform: translateZ(-2px) scale(1.08);
+}
+
+/* Face Positions */
+.front {
+  transform: translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    ". . ."
+    ". a ."
+    ". . .";
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    "a . ."
+    ". . ."
+    ". . b";
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    "a . ."
+    ". b ."
+    ". . c";
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    "a . b"
+    ". . ."
+    "c . d";
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    "a . b"
+    ". c ."
+    "d . e";
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(calc(var(--wh) / 2 + 1px));
+  grid-template-areas:
+    "a . b"
+    "c . d"
+    "e . f";
+}
+
+/* Final positions for each face value */
+.dice:not(.rolling)[data-face="1"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateX(20deg) rotateY(20deg);
+}
+
+.dice:not(.rolling)[data-face="2"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateX(-70deg) rotateZ(20deg);
+}
+
+.dice:not(.rolling)[data-face="3"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateY(70deg) rotateZ(25deg);
+}
+
+.dice:not(.rolling)[data-face="4"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateY(-107deg) rotateZ(20deg);
+}
+
+.dice:not(.rolling)[data-face="5"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateX(110deg) rotateZ(-20deg);
+}
+
+.dice:not(.rolling)[data-face="6"] {
+  transform: translateZ(calc(var(--wh) / 2)) rotateY(158deg) rotateX(-20deg);
+}

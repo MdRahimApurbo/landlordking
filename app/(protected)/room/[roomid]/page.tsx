@@ -1,5 +1,5 @@
-import ChatBoard from "@/components/board/ChatBoard";
-import GameBoard from "@/components/board/GameBoard";
+import ChatBoard from "@/components/board/chat-board";
+import GameBoard from "@/components/board/game-board";
 
 const page = () => {
   return (
