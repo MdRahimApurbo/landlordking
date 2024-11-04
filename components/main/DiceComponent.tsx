@@ -1,5 +1,5 @@
 "use client";
-import "@/style/dicestyleone.css"; // Import your CSS file
+import "@/style/dicestyleone.css";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -7,14 +7,13 @@ const DiceComponent = () => {
   const [firstDiceFace, setFirstDiceFace] = useState(1);
   const [secondDiceFace, setSecondDiceFace] = useState(1);
   const [total, setTotal] = useState(2);
-  const [rolling, setRolling] = useState(false); // State to control rolling effect
+  const [rolling, setRolling] = useState(false);
 
-  // Function to generate a random face, sometimes the same for both dice
   const getRandomFace = () => {
-    const biasSame = Math.random() < 0.2; // 20% chance for same value
+    const biasSame = Math.random() < 0.2;
     if (biasSame) {
       const newFace = Math.floor(Math.random() * 6) + 1;
-      return [newFace, newFace]; // Return same value for both dice
+      return [newFace, newFace];
     } else {
       let newFirstFace, newSecondFace;
       do {
@@ -24,7 +23,7 @@ const DiceComponent = () => {
         newFirstFace === firstDiceFace &&
         newSecondFace === secondDiceFace
       );
-      return [newFirstFace, newSecondFace]; // Different values for dice
+      return [newFirstFace, newSecondFace];
     }
   };
 
@@ -41,37 +40,47 @@ const DiceComponent = () => {
 
   return (
     <div>
-      <div className="flex flex-row gap-2">
-        <div className="dice-container">
-          <div
-            className={`dice ${rolling ? "rolling" : ""}`}
-            data-face={firstDiceFace}
-          >
-            {["front", "top", "left", "right", "bottom", "back"].map(
-              (direction, index) => (
-                <div key={direction} className={`face ${direction}`}>
-                  {Array.from({ length: index + 1 }).map((_, i) => (
-                    <span key={i}></span>
-                  ))}
-                </div>
-              )
-            )}
+      <div className="h-[240px] w-full ">
+        <div className="flex flex-row gap-2 justify-center items-center  relative bg-transparent">
+          <div className="dice-container ">
+            <div
+              className={`dice ${
+                rolling ? "rolling " : ""
+              } transition-all duration-300`}
+              style={{
+                marginBottom: rolling ? "60px" : "0px",
+              }}
+              data-face={firstDiceFace}
+            >
+              {["front", "top", "left", "right", "bottom", "back"].map(
+                (direction, index) => (
+                  <div key={direction} className={`face ${direction}`}>
+                    {Array.from({ length: index + 1 }).map((_, i) => (
+                      <span key={i}></span>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
           </div>
-        </div>
-        <div className="dice-container">
-          <div
-            className={`dice ${rolling ? "rolling" : ""}`}
-            data-face={secondDiceFace}
-          >
-            {["front", "top", "left", "right", "bottom", "back"].map(
-              (direction, index) => (
-                <div key={direction} className={`face ${direction}`}>
-                  {Array.from({ length: index + 1 }).map((_, i) => (
-                    <span key={i}></span>
-                  ))}
-                </div>
-              )
-            )}
+          <div className="dice-container ">
+            <div
+              className={`dice ${rolling ? "rolling" : ""}`}
+              data-face={secondDiceFace}
+              style={{
+                marginBottom: rolling ? "60px" : "0px",
+              }}
+            >
+              {["front", "top", "left", "right", "bottom", "back"].map(
+                (direction, index) => (
+                  <div key={direction} className={`face ${direction}`}>
+                    {Array.from({ length: index + 1 }).map((_, i) => (
+                      <span key={i}></span>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
