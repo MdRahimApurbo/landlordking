@@ -10,94 +10,71 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-    },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#e018ff",
+          dark: "#e018ff",
+          foreground: "#ffffff",
+          50: "#fce6ff",
+          100: "#f9b3ff",
+          200: "#f580ff",
+          300: "#f14dff",
+          400: "#ed1aff",
+          500: "#e018ff",
+          600: "#b014cc",
+          700: "#801099",
+          800: "#500c66",
+          900: "#300849",
+        },
+        secondary: {
+          DEFAULT: "#823fff",
+          dark: "#823fff",
+          foreground: "#ffffff",
+          50: "#f0e5ff", // Light variant
+          100: "#d9bbff",
+          200: "#c493ff",
+          300: "#ae69ff",
+          400: "#9c40ff",
+          500: "#823fff", // Main color
+          600: "#6a32cc",
+          700: "#532499",
+          800: "#3d1973",
+          900: "#290f4d",
+        },
+        accent: {
+          DEFAULT: "#f6571e",
+          foreground: "#ffffff",
+        },
+        background: {
+          light: "#ffffff",
+          dark: "#000000",
+        },
+        text: {
+          DEFAULT: "#ffffff",
+        },
+        shadow: {
+          DEFAULT: "rgba(0, 0, 0, 0.1)",
+          dark: "rgba(255, 255, 255, 0.2)",
+        },
+      },
       fontFamily: {
         sans: ["var(--font-satoshi)", ...fontFamily.sans],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      container: {
+        center: true,
+        padding: "2rem",
       },
-      border: "#eaeaea",
-      input: {
-        DEFAULT: "#fdfdfd",
-        border: "rgba(15, 15, 15, 0.2)",
-        placeholder: "rgba(15, 15, 15, 0.5)",
+      borderColor: {
+        DEFAULT: "#eaeaea",
       },
-      ring: "#8c21dd",
-      background: "#fdfdfd",
-      foreground: "#1a1a1a",
-      primary: {
+      ringColor: {
         DEFAULT: "#8c21dd",
-        foreground: "#ffffff",
-        50: "#eee6fb",
-        100: "#cbb2f1",
-        200: "#b18deb",
-        300: "#8e59e2",
-        400: "#7839dc",
-        500: "#8c21dd",
-        600: "#4e06c0",
-        700: "#3d0596",
-        800: "#2f0474",
-        900: "#240359",
       },
-      secondary: {
-        DEFAULT: "#1a1a1a",
-        foreground: "#ffffff",
-        hover: "#171717",
-        active: "#151515",
-        light: {
-          DEFAULT: "#e8e8e8",
-          hover: "#dddddd",
-          active: "#b8b8b8",
-        },
-        dark: {
-          DEFAULT: "#141414",
-          hover: "#101010",
-          active: "#0c0c0c",
-        },
-        darker: "#090909",
-      },
-      DEFAULT: "#ffffff",
-      normal: {
-        DEFAULT: "#fdfdfd",
-        hover: "#e4e4e4",
-        active: "#cacaca",
-      },
-      dark: {
-        DEFAULT: "#bebebe",
-        hover: "#989898",
-        active: "#727272",
-      },
-      darker: "#595959",
-    },
-    muted: {
-      DEFAULT: "#727272",
-      foreground: "#ffffff",
-    },
-    destructive: {
-      DEFAULT: "hsl(var(--destructive))",
-      foreground: "hsl(var(--destructive-foreground))",
-    },
-    accent: {
-      DEFAULT: "hsl(var(--accent))",
-      foreground: "hsl(var(--accent-foreground))",
-    },
-    popover: {
-      DEFAULT: "hsl(var(--popover))",
-      foreground: "hsl(var(--popover-foreground))",
-    },
-    card: {
-      DEFAULT: "hsl(var(--card))",
-      foreground: "hsl(var(--card-foreground))",
     },
   },
   darkMode: "class",
   plugins: [nextui()],
 };
+
 export default config;

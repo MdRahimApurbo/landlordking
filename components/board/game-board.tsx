@@ -63,7 +63,7 @@ const GameBoard = () => {
           </div>
         </div>
         {/* Center Box */}
-        <div className="col-span-5 row-span-5 flex items-center justify-center bg-gray-800 border-2 border-black place-items-center rounded-lg shadow-lg">
+        <div className="col-span-5 row-span-5 flex items-center justify-center place-items-center ">
           <MiddleGameBoard />
         </div>
         {/* Right Row */}

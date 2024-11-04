@@ -1,0 +1,21 @@
+.cs_shape {
+  width: 514px;
+  height: 514px;
+  border-radius: 50%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(224, 24, 255, 0.5)),
+    to(rgba(134, 14, 153, 0.5))
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(224, 24, 255, 0.5) 0%,
+    rgba(134, 14, 153, 0.5) 100%
+  );
+  -webkit-filter: blur(250px);
+  filter: blur(250px);
+  position: absolute;
+  pointer-events: none;
+}

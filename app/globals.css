@@ -3,34 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 0, 0, 0; /* Black text */
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --primary-color: #140f1d;
-  --secondary-color: #ffffff;
+  --background-end-rgb: 255, 255, 255; /* White */
+  --primary-color: #140f1d; /* Dark purple */
+  --secondary-color: #ffffff; /* White */
   --font-satoshi: "Satoshi";
 }
 
+/* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    --primary-color: #ffffff;
-    --secondary-color: #140f1d;
+    --background-end-rgb: 0, 0, 0; /* Black */
+    --primary-color: #ffffff; /* White */
+    --secondary-color: #140f1d; /* Dark purple */
   }
 }
 
+/* Body styling */
 body {
-  color: rgb(var(--foreground-rgb));
+  font-family: var(--font-satoshi), sans-serif; /* Satoshi as main font */
+  color: rgb(var(--foreground-rgb)); /* Dynamically set text color */
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    ),
+    rgb(var(--background-start-rgb)); /* Smooth gradient background */
 }
 
+/* Custom Tailwind utility class */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
