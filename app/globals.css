@@ -9,6 +9,7 @@
   --primary-color: #140f1d; /* Dark purple */
   --secondary-color: #ffffff; /* White */
   --font-satoshi: "Satoshi";
+  --font-bangla: "Bangla";
 }
 
 /* Dark mode variables */
@@ -24,14 +25,15 @@
 
 /* Body styling */
 body {
-  font-family: var(--font-satoshi), sans-serif; /* Satoshi as main font */
-  color: rgb(var(--foreground-rgb)); /* Dynamically set text color */
+  font-family: var(--font-satoshi), sans-serif;
+  font-family: var(--font-bangla), sans-serif;
+  color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     ),
-    rgb(var(--background-start-rgb)); /* Smooth gradient background */
+    rgb(var(--background-start-rgb));
 }
 
 /* Custom Tailwind utility class */

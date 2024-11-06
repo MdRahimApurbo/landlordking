@@ -60,6 +60,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-satoshi)", ...fontFamily.sans],
+        bangla: ["var(--font-bangla)", ...fontFamily.sans],
       },
       container: {
         center: true,
