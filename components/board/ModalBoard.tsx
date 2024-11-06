@@ -46,6 +46,7 @@ const ModalBoard = () => {
                   <div className="grid grid-cols-3  place-content-center place-items-center gap-5">
                     <Ball
                       onPress={() => setSelectedColor("yellow")}
+                      value={selectedColor}
                       color="bg-yellow-400"
                       w={14}
                       h={14}
