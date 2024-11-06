@@ -10,11 +10,14 @@ export function middleware(request: NextRequest) {
 
   if (
     subdomain === "www" ||
+    subdomain === "landlordking" ||
     subdomain === ROOT_URL ||
     url.pathname.endsWith("/not-found")
   ) {
     return NextResponse.next();
   }
+
+  console.log("url.protocol + ROOT_URL", url.protocol + ROOT_URL);
   // if (host?.includes("admin")) {
   //   const redirectUrl = new URL(`${ROOT_URL}`, request.url);
   //   return NextResponse.redirect(redirectUrl);
