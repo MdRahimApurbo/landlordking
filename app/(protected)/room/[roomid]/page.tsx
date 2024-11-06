@@ -1,6 +1,6 @@
 import ChatBoard from "@/components/board/chat-board";
 import GameBoard from "@/components/board/game-board";
-
+import ModalBoard from "@/components/board/ModalBoard";
 const page = () => {
   return (
     <div className="flex flex-col md:flex-row p-4 gap-4 h-full overflow-hidden bg-black">
@@ -8,6 +8,7 @@ const page = () => {
         <div className="bg-[#29203f] p-4 rounded-lg flex-1">Join Link</div>
         <div className="bg-[#29203f] p-4 rounded-lg h-[80%]">
           <ChatBoard />
+          <ModalBoard />
         </div>
       </div>
       <div className="h-full">
