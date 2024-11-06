@@ -6,8 +6,6 @@ export function middleware(request: NextRequest) {
   const host = request.headers.get("host");
   const subdomain = host?.split(".")[0];
 
-  console.log("subdomain", subdomain, url);
-
   if (
     subdomain === "www" ||
     subdomain === "landlordking" ||
@@ -17,7 +15,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  console.log("url.protocol + ROOT_URL", url.protocol + ROOT_URL);
+  console.log("url.pathname", url.pathname);
+
+  if (url.pathname.endsWith("/admin")) {
+    console.log("admin");
+  } else {
+    console.log("not admin");
+  }
   // if (host?.includes("admin")) {
   //   const redirectUrl = new URL(`${ROOT_URL}`, request.url);
   //   return NextResponse.redirect(redirectUrl);
@@ -42,8 +46,6 @@ export function middleware(request: NextRequest) {
     if (slug === "admin") return true;
     return false;
   }
-
-  return NextResponse.next();
 }
 
 export const config = {
