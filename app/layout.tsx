@@ -1,8 +1,9 @@
 import Provider from "@/app/provider";
+import "@/style/main.css";
 import "@/style/style.css";
 import type { Metadata } from "next";
 import "./globals.css";
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Create Next App",
